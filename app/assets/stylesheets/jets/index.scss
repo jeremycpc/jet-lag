@@ -1,3 +1,22 @@
 .main-title {
   font-size: 60px;
+  color: #B97375;
+  text-align: center;
+  font-family: "Great Vibes", cursive;
+  padding-bottom: 30px;
+  margin-top: -80px;
 }
+
+.container-header {
+  display: flex;
+  justify-content: center;
+  height: 450px;
+}
+
+.banner {
+  background-size: cover;
+  height: 450px;
+  width: 100%;
+  margin:0 auto;
+}
+

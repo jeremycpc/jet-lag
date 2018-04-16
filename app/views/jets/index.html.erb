@@ -1,40 +1,17 @@
 <head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
 </head>
 <%= render "/navbar" %>
-<!-- Slideshow container -->
-<!-- <div class="slideshow-container">
-
-  <!-- Full-width images with number and caption text -->
-<!--   <div class="mySlides fade">
-    <div class="numbertext">1 / 2</div>
-    <img src="banner1.jpeg" style="width:100%">
-    <div class="main-title">Jet Lag</div>
+<div class="container-header">
+  <div class="banner">
+    <%=image_tag "https://images.unsplash.com/photo-1509959592505-7472d3032c56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed08c1455a8d4c1a4c53cab0797bd7ff&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
+    <h1 class='main-title'> Jet Lag </h1>
   </div>
-
-  <div class="mySlides fade">
-    <div class="numbertext">2 / 2</div>
-    <img src="banner2.jpeg" style="width:100%">
-    <div class="text">The new way to travel</div>
-  </div> -->
-
-  <!-- Next and previous buttons -->
-<!--   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
-<br> -->
-
-<!-- The dots/circles -->
-<!-- <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div> --> -->
-
 <body>
 <% @jets.each do |jet| %>
-<%= jet.name %>
-<%= jet.description %>
-<%= jet.price %>
+<ul><%= jet.name %></ul>
+<ul><%= jet.description %></ul>
+<ul><%= jet.price %></ul>
 <%= link_to "Show this jet", jet %>
 <% end %>
 </body>
