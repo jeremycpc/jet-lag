@@ -8,7 +8,7 @@
 
 
   <% @jets.each do |jet| %>
-  <p><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet %> </p>
+  <p><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </p>
   <% end %>
 
   <br>

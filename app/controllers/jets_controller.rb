@@ -1,5 +1,7 @@
 class JetsController < ApplicationController
   before_action :find_jet, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @jets = Jet.all
   end
@@ -20,7 +22,7 @@ class JetsController < ApplicationController
 
   def show
     @booking = Booking.new
-    @jet = Jet.find(params[:id])
+    @jet_owner = @jet.user
   end
 
   def edit

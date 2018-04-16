@@ -11,19 +11,20 @@
     <br>
     Price: $ <%= @jet.price %>
     <br>
-    Belongs to: <%= User.find(@jet.user_id).first_name %>
+    Belongs to: <%= @jet_owner.first_name %>
   </p>
   <br>
-  <%= link_to "Edit", edit_jet_path(@jet) %>
-  <br>
-  <%= link_to "Back home", jets_path %>
-  <br>
-  <%= link_to "Delete jet", jet_path(@jet), method: :delete,
-  data: { confirm: "Are you sure?" } %>
+  <% if current_user && current_user.id == @jet_owner.id %>
+    <%= link_to "Edit", edit_jet_path(@jet) %>
+    <br>
+    <%= link_to "Delete jet", jet_path(@jet), method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  <% end %>
   <br>
   <p>Book a trip</p>
-
   <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking %>
+  <br>
+  <%= link_to "Back home", jets_path %>
 </div>
 
 
