@@ -1,6 +1,28 @@
 <head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
 </head>
+
 <%= render "/navbar" %>
+
+<div class="container">
+  <h1>Jet-lag</h1>
+
+
+  <% @jets.each do |jet| %>
+  <p><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet %> </p>
+  <% end %>
+
+  <br>
+  <% if current_user %>
+    <p>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %> | <%= link_to "Update Details", edit_user_registration_path %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to "Log In", user_session_path %> | <%= link_to "Sign Up", new_user_registration_path %>
+    </p>
+  <% end %>
+</div>
+
 <!-- Slideshow container -->
 <!-- <div class="slideshow-container">
 
@@ -29,12 +51,3 @@
   <span class="dot" onclick="currentSlide(2)"></span>
   <span class="dot" onclick="currentSlide(3)"></span>
 </div> --> -->
-
-<body>
-<% @jets.each do |jet| %>
-<%= jet.name %>
-<%= jet.description %>
-<%= jet.price %>
-<%= link_to "Show this jet", jet %>
-<% end %>
-</body>
