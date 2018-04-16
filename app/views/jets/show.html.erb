@@ -1,3 +1,4 @@
+
 <h1 class="text-center"><%= @jet.name %></h1>
 <br>
 <div class="container">
@@ -19,4 +20,14 @@
   <br>
   <%= link_to "Delete jet", jet_path(@jet), method: :delete,
   data: { confirm: "Are you sure?" } %>
+  <br>
+  <p>Book a trip</p>
+
+  <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking %>
 </div>
+
+
+
+
+
+
