@@ -1,6 +1,7 @@
 class JetsController < ApplicationController
   before_action :find_jet, only: [:show, :edit, :update, :destroy]
   def index
+    @jets = Jet.all
   end
 
   def new
