@@ -1,4 +1,5 @@
 class JetsController < ApplicationController
+  before_action :find_jet, only: [:show, :edit, :update, :destroy]
   def index
   end
 
@@ -15,15 +16,29 @@ class JetsController < ApplicationController
       render :new
     end
   end
-  def show
 
+  def show
   end
 
   def edit
   end
 
+  def update
+    @jet.update(jet_params)
+    redirect_to jet_path(@jet)
+  end
+
+  def destroy
+    @jet.destroy
+    redirect_to jets_path
+  end
+
   private
   def jet_params
     params.require(:jet).permit(:name, :description, :has_service, :origin, :price)
+  end
+
+  def find_jet
+    @jet = Jet.find(params[:id])
   end
 end
