@@ -1,2 +1,12 @@
-<h1>Jets#index</h1>
-<p>Find me in app/views/jets/index.html.erb</p>
+<h1>Jet-lag</h1>
+<head>
+
+</head>
+<body>
+<% @jets.each do |jet| %>
+<%= jet.name %>
+<%= jet.description %>
+<%= jet.price %>
+<%= link_to "Show this jet", jet %>
+<% end %>
+</body>
