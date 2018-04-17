@@ -3,24 +3,26 @@
 
 <%= render "/navbar" %>
 
-<div class="container">
-  <h1>Jet-lag</h1>
-
-
-  <% @jets.each do |jet| %>
-  <p><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </p>
+<div class="container-header">
+  <div class="banner">
+    <%=image_tag "https://images.unsplash.com/photo-1509959592505-7472d3032c56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed08c1455a8d4c1a4c53cab0797bd7ff&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
+    <h1 class='main-title'> Jet Lag </h1>
+  </div>
+</div>
+<body>
+ <% @jets.each do |jet| %>
+  <ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
   <% end %>
 
   <br>
   <% if current_user %>
-    <p>
+    <ul>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete %> | <%= link_to "Update Details", edit_user_registration_path %>
-    </p>
+    </ul>
   <% else %>
-    <p>
+    <ul>
       <%= link_to "Log In", user_session_path %> | <%= link_to "Sign Up", new_user_registration_path %>
-    </p>
+    </ul>
   <% end %>
-</div>
-
+</body>
 

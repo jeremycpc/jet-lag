@@ -3,10 +3,9 @@
 <div class="navbar-container">
   <div><i class="far fa-paper-plane icon"></i></div>
   <div class="navbar-links">
-    <%= link_to "Create your ad", @jets_path %>
-    <%= link_to "Show your bookings", @bookings_path %>
-    <%= link_to "Book your jet", @jet_bookings_path %>
-    <%= link_to "Log In", @new_user_session_path %>
+    <span class="navbar-words"><%= link_to "Create your ad", new_jet_path %></span>
+    <span class="navbar-words"><%= link_to "Show your bookings", bookings_path %></span>
+    <span class="navbar-words"><%= link_to "Log In", new_user_session_path %></span>
   </div>
 </div>
 
