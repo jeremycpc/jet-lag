@@ -6,6 +6,7 @@
 <% @bookings.each do |booking| %>
 <%= booking.booked_on %>
 <%= booking.returned_on %>
-<%= link_to "Edit this booking", edit_booking %>
+<%= link_to "Edit this booking", edit_booking_path(booking) %>
+<%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
 <% end %>
 </body>

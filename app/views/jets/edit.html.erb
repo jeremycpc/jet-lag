@@ -1,1 +1,12 @@
-edit.html.erb
+
+<div class="container">
+<%= simple_form_for @jet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :has_service, as: :select %>
+  <%= f.input :origin   %>
+  <%= f.input :price %>
+  <%= f.submit "Edit Jet", class: "btn btn-primary" %>
+<% end %>
+</div>
+
