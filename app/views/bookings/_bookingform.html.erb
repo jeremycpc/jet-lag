@@ -1,8 +1,6 @@
 <%= simple_form_for [jet, booking] do |f| %>
 
-    <%= f.input :booked_on %>
-    <%= f.input :returned_on %>
-
+    <%= f.input :seats, as: :radio_buttons, collection: jet.seat_range %>
     <%= f.submit "Submit" %>
 
 <% end %>

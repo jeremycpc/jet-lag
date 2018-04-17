@@ -1,6 +1,12 @@
 <h1>Edit your booking</h1>
 
-<%= render 'bookings/bookingform', :jet => @jet, :booking => @booking %>
+
+<%= simple_form_for [@booking] do |f| %>
+
+    <%= f.input :seats, as: :radio_buttons, collection: @jet.seat_range %>
+    <%= f.submit "Submit" %>
+
+<% end %>
 
 <%= link_to 'Back', :back %>
 <%= link_to 'Home', :jets %>

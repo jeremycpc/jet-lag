@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
+require 'faker'
 
 jets = ["Jetstar", "Jetmoon", "Jetfire", "Jetice", "Jetwater"]
 origins = ["Paris", "Melbourne", "Tokyo", "Saigon", "New York"]
@@ -41,6 +42,9 @@ jets.each_with_index do |jet, index|
     name: jet,
     description: description[index],
     has_service: true,
+    start_on: Faker::Date.between(40.days.ago, Date.yesterday),
+    end_on: Faker::Date.forward(150),
+    max_capacity: (1..8).to_a.sample,
     price: prices[index],
     user_id: 1,
     airport_origin: Airport.all[1..20].sample,
