@@ -3,16 +3,18 @@ class JetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @jets = Jet.all
+    @jets = policy_scope(Jet)
   end
 
   def new
     @jet = Jet.new
+    authorize @jet
   end
 
   def create
     @jet = Jet.new(jet_params)
     @jet.user = current_user
+    authorize @jet
     if @jet.save
       redirect_to jet_path(@jet)
     else
@@ -23,17 +25,21 @@ class JetsController < ApplicationController
   def show
     @booking = Booking.new
     @jet_owner = @jet.user
+    authorize @jet
   end
 
   def edit
+    authorize @jet
   end
 
   def update
+    authorize @jet
     @jet.update(jet_params)
     redirect_to jet_path(@jet)
   end
 
   def destroy
+    authorize @jet
     @jet.destroy
     redirect_to jets_path
   end
