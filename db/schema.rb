@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417022532) do
+ActiveRecord::Schema.define(version: 20180417031854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "airports", force: :cascade do |t|
+    t.string "name"
+    t.string "acronym"
+    t.string "lat"
+    t.string "lon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "bookings", force: :cascade do |t|
     t.date "booked_on"
@@ -30,12 +39,15 @@ ActiveRecord::Schema.define(version: 20180417022532) do
     t.string "name"
     t.text "description"
     t.boolean "has_service"
-    t.string "origin"
+    t.integer "airport_origin_id"
     t.integer "price"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.integer "airport_destination_id"
+    t.bigint "airport_id"
+    t.index ["airport_id"], name: "index_jets_on_airport_id"
     t.index ["user_id"], name: "index_jets_on_user_id"
   end
 
