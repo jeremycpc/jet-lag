@@ -11,8 +11,6 @@
     <br>
     Has service? : <%= @jet.has_service ? "Yes" : "No" %>
     <br>
-    Price: $ <%= @jet.price %>
-    <br>
     Belongs to: <%= @jet_owner.first_name %>
     <br>
     Departure airport: <%= @jet.airport_origin.name %> (<%= @jet.airport_origin.acronym %>)
@@ -31,6 +29,8 @@
 
   <br>
   <p>Book a trip</p>
+  <p>Trip Price: <%= (@jet.calculate_price).floor %>
+
   <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking %>
   <br>
   <%= link_to "Back home", jets_path %>
