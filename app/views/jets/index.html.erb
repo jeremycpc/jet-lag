@@ -1,6 +1,8 @@
 <head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
 </head>
+
 <%= render "/navbar" %>
+
 <div class="container-header">
   <div class="banner">
     <%=image_tag "https://images.unsplash.com/photo-1509959592505-7472d3032c56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed08c1455a8d4c1a4c53cab0797bd7ff&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
@@ -8,10 +10,19 @@
   </div>
 </div>
 <body>
-<% @jets.each do |jet| %>
-<ul><%= jet.name %></ul>
-<ul><%= jet.description %></ul>
-<ul><%= jet.price %></ul>
-<%= link_to "Show this jet", jet %>
-<% end %>
+  <% @jets.each do |jet| %>
+  <p><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </p>
+  <% end %>
+
+  <br>
+  <% if current_user %>
+    <p>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete %> | <%= link_to "Update Details", edit_user_registration_path %>
+    </p>
+  <% else %>
+    <p>
+      <%= link_to "Log In", user_session_path %> | <%= link_to "Sign Up", new_user_registration_path %>
+    </p>
+  <% end %>
 </body>
+

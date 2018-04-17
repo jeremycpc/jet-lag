@@ -1,2 +1,11 @@
-<h1>Jets#new</h1>
-<p>Find me in app/views/jets/new.html.erb</p>
+<h1 class="text-center">New Jet</h1>
+<div class="container">
+  <%= simple_form_for @jet do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :has_service, as: :select %>
+  <%= f.input :origin   %>
+  <%= f.input :price %>
+  <%= f.submit "Add a Jet", class: "btn btn-primary" %>
+<% end %>
+</div>
