@@ -2,7 +2,9 @@
 </head>
 <div class="navbar-container">
   <div><i class="far fa-paper-plane icon"></i></div>
-  <h3>Signed in as <%= current_user.email %></h3>
+  <% if current_user %>
+    <h3>Signed in as <%= current_user.email %></h3>
+  <% end %>
   <div class="navbar-links">
     <span class="navbar-words"><%= link_to "Create your ad", new_jet_path %></span>
     <span class="navbar-words"><%= link_to "Show your bookings", bookings_path %></span>
