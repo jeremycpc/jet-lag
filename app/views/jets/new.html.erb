@@ -6,6 +6,9 @@
   <%= f.input :has_service, as: :select %>
   <%= f.input :origin   %>
   <%= f.input :price %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit "Add a Jet", class: "btn btn-primary" %>
 <% end %>
+ <%= link_to "Back home", jets_path %>
 </div>
