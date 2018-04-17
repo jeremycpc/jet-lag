@@ -1,0 +1,5 @@
+
+<% @jets.each do |jet| %>
+  <ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
+
+  <% end %>

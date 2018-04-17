@@ -4,6 +4,7 @@ class JetsController < ApplicationController
 
   def index
     @jets = policy_scope(Jet)
+    @airports = Airport.all.order(:name)
   end
 
   def new

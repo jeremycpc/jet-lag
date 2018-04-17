@@ -1,20 +1,22 @@
 <head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
 </head>
-
+<body>
 <%= render "/navbar" %>
-
 <div class="container-header">
   <div class="banner">
     <%=image_tag "https://images.unsplash.com/photo-1509959592505-7472d3032c56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed08c1455a8d4c1a4c53cab0797bd7ff&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
+    <%= form_tag(search_airports_path, method: :get) do %>
+    <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
+    <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
+    <%= submit_tag 'Search' %>
+    <% end %>
     <h1 class='main-title'> Jet Lag </h1>
   </div>
 </div>
-<body>
+<br>
  <% @jets.each do |jet| %>
   <ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
   <% end %>
-
-  <br>
 
 </body>
 
