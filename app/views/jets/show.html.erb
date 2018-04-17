@@ -11,16 +11,13 @@
     <br>
     Has service? : <%= @jet.has_service ? "Yes" : "No" %>
     <br>
-    Origin: <% @jet.airports(airport_origin_id).each do |a| %>
-    <%= "#{a.name} (#{a.acronym.uppercase})" %>
-    <br>
-    <br>
-    Current Destination: <% @jet.airports.each do |a| %>
-    <%= "#{a.name} (#{a.acronym.uppercase})" %>
-    <br>
     Price: $ <%= @jet.price %>
     <br>
     Belongs to: <%= @jet_owner.first_name %>
+    <br>
+    Departure airport: <%= @jet.airport_origin.name %> (<%= @jet.airport_origin.acronym %>)
+    <br>
+    Destination airport: <%= @jet.airport_destination.name %> (<%= @jet.airport_destination.acronym %>)
   </p>
   <br>
   <% if policy(@jet).update? %>

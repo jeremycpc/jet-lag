@@ -4,7 +4,8 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :has_service, as: :select %>
-  <%= f.input :origin   %>
+  <%= f.association :airport_origin %>
+  <%= f.association :airport_destination %>
   <%= f.input :price %>
   <%= f.submit "Edit Jet", class: "btn btn-primary" %>
 <% end %>

@@ -1,10 +1,11 @@
 <h1 class="text-center">New Jet</h1>
 <div class="container">
-  <%= simple_form_for @jet do |f| %>
+  <%= simple_form_for @jet   do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :has_service, as: :select %>
-  <%= f.input :origin   %>
+  <%= f.association :airport_origin %>
+  <%= f.association :airport_destination %>
   <%= f.input :price %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
