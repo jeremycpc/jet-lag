@@ -1,0 +1,19 @@
+<div class="card-wrapper">
+  <div class="card"
+    <% if jet.photo? %>
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path jet.photo.url(:thumbnail) %>);"
+    <% else %>
+      style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));"
+    <% end %>
+    >
+
+
+    <div class="card-description">
+      <p><%= jet.name %> | <%= jet.description %> | $<%= jet.price %> per person | <%= link_to "Show this jet", jet_path(jet)%>
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
