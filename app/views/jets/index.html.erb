@@ -1,22 +1,24 @@
-<head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
-</head>
-<body>
+
 <%= render "/navbar" %>
 <div class="container-header">
   <div class="banner">
-    <%=image_tag "https://images.unsplash.com/photo-1509959592505-7472d3032c56?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ed08c1455a8d4c1a4c53cab0797bd7ff&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
-    <%= form_tag(search_airports_path, method: :get) do %>
-    <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
-    <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
-    <%= submit_tag 'Search' %>
-    <% end %>
-    <h1 class='main-title'> Jet Lag </h1>
+    <%=image_tag "https://images.unsplash.com/uploads/14114640960629b5c3fa0/116dc05a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbfd4b7f8ece57720da85b50565a2709&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
+    <div>
+      <h1 class='main-title'> Jet Lag </h1>
+    <h1 class='banner-text'> Search for your first trip:</h1>
+    </div>
+    <div class="search-bar">
+      <%= form_tag(search_airports_path, method: :get) do %>
+      <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
+      <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
+      <%= submit_tag 'Search' %>
+      <% end %>
+    </div>
   </div>
 </div>
 <br>
- <% @jets.each do |jet| %>
-  <ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
-  <% end %>
+<% @jets.each do |jet| %>
+<ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
+<% end %>
 
-</body>
 
