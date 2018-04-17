@@ -1,5 +1,6 @@
 <head><link href="https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans" rel="stylesheet">
 </head>
+
 <body>
 <%= render "/navbar" %>
 <div class="container-header">
@@ -14,9 +15,15 @@
   </div>
 </div>
 <br>
- <% @jets.each do |jet| %>
-  <ul><%= jet.name %> | <%= jet.description %> | <%= jet.price %> | <%= link_to "Show this jet", jet_path(jet) %> </ul>
-  <% end %>
 
+<div class="container">
+  <div class="row">
+    <% @jets.each do |jet| %>
+      <div class="col-xs-4">
+        <%= render "card", { jet: jet }%>
+      </div>
+    <% end %>
+  </div>
+</div>
 </body>
 

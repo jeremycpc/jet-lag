@@ -1,0 +1,36 @@
+.card-wrapper {
+  margin: 20px 0px;
+  border: 1px solid gray;
+}
+
+.card {
+  height: 175px;
+  margin: 0px 0px 100px 0px;
+}
+
+.card-description {
+  display: flex;
+  align-items: flex-end;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: black;
+  margin: 0px;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: black;
+  opacity: 0;
+  border-radius: 2px;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
