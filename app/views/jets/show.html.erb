@@ -14,10 +14,14 @@
     Belongs to: <%= @jet_owner.first_name %>
   </p>
   <br>
-  <%= link_to "Edit", edit_jet_path(@jet) %>
-    <br>
-  <%= link_to "Delete jet", jet_path(@jet), method: :delete,
-  data: { confirm: "Are you sure?" } %>
+  <% if policy(@jet).update? %>
+    <%= link_to "Edit", edit_jet_path(@jet) %>
+  <% end %>
+  <br>
+  <% if policy(@jet).destroy? %>
+    <%= link_to "Delete jet", jet_path(@jet), method: :delete,
+    data: { confirm: "Are you sure?" } %>
+  <% end %>
 
   <br>
   <p>Book a trip</p>
