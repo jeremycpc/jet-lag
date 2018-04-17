@@ -9,7 +9,7 @@
   <% if policy(booking).update? %>
     <%= link_to "Edit this booking", edit_booking_path(booking) %>
   <% end %>
-  <% if policy(destroy).update? %>
+  <% if policy(booking).destroy? %>
     <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 <% end %>
