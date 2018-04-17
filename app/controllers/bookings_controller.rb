@@ -36,8 +36,8 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @jet = @booking.jet
     authorize @booking
-    # @booking.booking_price = @jet.calculate_price * @booking.seats
     @booking.update!(booking_params)
+    @booking.update_attribute(:booking_price, @jet.calculate_price * @booking.seats)
     redirect_to bookings_path
   end
 
