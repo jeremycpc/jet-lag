@@ -6,6 +6,13 @@ class SearchAirportsController < ApplicationController
   def index
     airport_origin_id = params[:airport_origin]
     airport_destination_id = params[:airport_destination]
-   @jets = Jet.where(airport_origin_id: airport_origin_id, airport_destination_id: airport_destination_id)
+    @jets = Jet.where(airport_origin_id: airport_origin_id, airport_destination_id: airport_destination_id)
+
+    @markers = @jets.map do |jet|
+      {
+        lat: jet.airport_origin.lat,
+        lng: jet.airport_origin.lon
+      }
+    end
   end
 end
