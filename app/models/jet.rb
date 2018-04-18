@@ -7,6 +7,16 @@ class Jet < ApplicationRecord
   has_many :bookings, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
+  validates :price, presence: true
+  validates :max_capacity, presence: true
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :has_service, presence: true
+  validates :start_on, presence: true
+  validates :end_on, presence: true
+  validates :photo, presence: true
+
+
   def seat_range
     (1..max_capacity)
   end
