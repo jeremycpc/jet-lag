@@ -1,4 +1,5 @@
-<div class="container">
+<%= render "/navbar" %>
+<div class="registration-container">
 
 
     <h2>Sign up</h2>
@@ -20,6 +21,6 @@
         <%= f.button :submit, "Sign up" %>
       </div>
     <% end %>
-  <br>
-    <%= render "devise/shared/links" %>
+    <br>
+    <%= link_to "Back to Home", :back, class: "home-btn" %>
 </div>
