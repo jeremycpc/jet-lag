@@ -6,14 +6,14 @@
       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));"
     <% end %>
     >
-
+  </div>
 
     <div class="card-description">
-      <p><%= jet.name %> | <%= jet.description %> | $<%= jet.price %> per person | <%= link_to "Show this jet", jet_path(jet)%>
-      </p>
+      <h3><%= jet.name %></h3>
+      <h4><%= jet.description %></h4>
+      <p>$<%= jet.price %> USD per day</p>
     </div>
-
-  </div>
+    <%= link_to "", jet_path(jet), class: "card-link"%>
 </div>
 
 
