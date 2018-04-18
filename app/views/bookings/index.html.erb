@@ -1,25 +1,24 @@
-<h1>Your bookings</h1>
-<head>
+<%= render "/navbar" %>
 
-</head>
-<body>
-<% @bookings.each do |booking| %>
+<div class="container">
+  <h1>Your bookings</h1>
+  <% @bookings.each do |booking| %>
 
-  <br>
-  Jet booked : <%= booking.jet.name %>
-  <br>
-  Total price : <%= booking.booking_price %>
-  <br>
-  Seats booked : <%= booking.seats %>
-  <br>
-  Booking created at : <%= booking.created_at.localtime %>
-  <br>
-  <% if policy(booking).update? %>
-    <%= link_to "Edit this booking", edit_booking_path(booking) %>
+    <br>
+    Jet booked : <%= booking.jet.name %>
+    <br>
+    Total price : <%= booking.booking_price %>
+    <br>
+    Seats booked : <%= booking.seats %>
+    <br>
+    Booking created at : <%= booking.created_at.localtime %>
+    <br>
+    <% if policy(booking).update? %>
+      <%= link_to "Edit this booking", edit_booking_path(booking) %>
+    <% end %>
+    <br>
+    <% if policy(booking).destroy? %>
+      <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   <% end %>
-  <br>
-  <% if policy(booking).destroy? %>
-    <%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
-<% end %>
-</body>
+</div>
