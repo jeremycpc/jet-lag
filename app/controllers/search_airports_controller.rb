@@ -7,7 +7,6 @@ class SearchAirportsController < ApplicationController
     airport_origin_id = params[:airport_origin]
     airport_destination_id = params[:airport_destination]
     @jets = Jet.where(airport_origin_id: airport_origin_id, airport_destination_id: airport_destination_id)
-
     @markers = @jets.map do |jet|
       {
         lat: jet.airport_origin.lat,
