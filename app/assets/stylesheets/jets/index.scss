@@ -21,13 +21,23 @@
   width: 100%;
   margin:0 auto;
   object-fit: cover;
+  position: relative;
 }
 
-.search-bar {
+.search-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.search-bar {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
   font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  position: absolute;
+  height: 120px;
 }
 
 input {
@@ -54,5 +64,9 @@ select {
   text-align: center;
   font-size: 25px;
   color: #2A3250;
+}
+
+#padding-h4 {
+  padding-top: 60px;
 }
 

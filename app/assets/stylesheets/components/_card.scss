@@ -1,26 +1,37 @@
 .card-wrapper {
+  position: relative;
   margin: 20px 0px;
-  border: 1px solid gray;
+  height: auto;
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .card {
+  margin-bottom: 20px;
   height: 175px;
-  margin: 0px 0px 100px 0px;
+  border-radius: 2px;
 }
 
 .card-description {
-  display: flex;
-  align-items: flex-end;
+  margin-left: 10px;
+  padding-bottom: 15px;
 }
-.card-description h2 {
-  font-size: 24px;
-}
-.card-description p {
+
+.card-description h3 {
   font-size: 20px;
+}
+
+.card-description h4 {
+  font-size: 16px;
+}
+
+.card-description p {
+  font-size: 14px;
   font-weight: lighter;
   color: black;
   margin: 0px;
 }
+
 .card-link {
   position: absolute;
   top: 0;
@@ -31,6 +42,4 @@
   opacity: 0;
   border-radius: 2px;
 }
-.card-link:hover {
-  opacity: 0.1;
-}
+
