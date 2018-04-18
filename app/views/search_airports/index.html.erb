@@ -1,15 +1,15 @@
 <% if @jets != []  %>
 
 <div class="container">
+  <h3>Explore jets</h3>
   <div class="row">
-  <% @jets.each do |jet| %>
-    <div class="col-xs-3">
-      <%= render "card", { jet: jet }%>
-    </div>
+    <% @jets.each do |jet| %>
+      <div class="col-xs-3">
+        <%= render "card", { jet: jet }%>
+      </div>
     <% end %>
   </div>
 </div>
-
 
     <div
       id="map"
