@@ -1,8 +1,9 @@
 // Import Google fonts
-@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans|Pacifico|Roboto|Courgette|Delius+Swash+Caps|Berkshire+Swash");
+@import url("https://fonts.googleapis.com/css?family=Great+Vibes|Open+Sans");
 // Define fonts for body and headers
 $body-font: "Open Sans", "sans-serif";
-$headers-font: "Great Vibes", "sans-serif";
+$headers-font: "Open Sans", "sans-serif";
+$logo-font: "Great Vibes", "cursive";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
