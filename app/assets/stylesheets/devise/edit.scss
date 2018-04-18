@@ -1,0 +1,60 @@
+.registration-container{
+  background-color: rgba(42,50,80,0.7);
+  padding-left: 30px;
+  padding-top: 30px;
+  h2{
+    margin-top: 0px;
+    color: black;
+  }
+  label{
+    color: black;
+    opacity: 0.8;
+  }
+  small{
+    color: white;
+    opacity: 0.7;
+  }
+  input{
+    width: 400px;
+  }
+}
+
+
+.form-actions{
+   input {
+  border-radius: 10px;
+  border: none;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 20px;
+  padding: 5px;
+  background: transparent;
+  border: 1px solid rgba(42,50,80,1);
+  padding: 5px 20px 5px;
+  color: #2A3250;
+}
+
+}
+
+.unhappy {
+  color: black;
+  font-size: 10px;
+  margin-top: 30px;
+   a {
+  color: black;
+  text-decoration: none;
+  font-size: 10px;
+}
+}
+
+.home-btn {
+  font-size: 30px;
+  font-family: "Great Vibes", cursive;
+  margin-bottom: 30px;
+  padding-top: 30px;
+  text-decoration: none;
+  color: black;
+   a {
+  text-decoration: none;
+}
+}
+
