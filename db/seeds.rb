@@ -1,56 +1,67 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
 require 'faker'
 
-jets = ["Jetstar", "Jetmoon", "Jetfire", "Jetice", "Jetwater"]
-origins = ["Paris", "Melbourne", "Tokyo", "Saigon", "New York"]
-description = ["Very spacious", "The Rock's personal jet", "Will Smith's jet", "5 star jet", "Jet with swimming pool"]
-prices = [3000, 5000, 2000, 1000, 2500]
-users = [{first_name: "Harrison", email: "harrison@example.com", password: "password"},
-  { first_name: "Michael", email: "michael@example.com", password: "password"}]
+puts "Creating users..."
 
-puts "Creating 5 users"
-users.each do |user|
-  User.create!(user)
-end
+10.times do
+  user = User.create!(
+    email: Faker::Internet.email,
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    password: Faker::Internet.password(8)
+    )
+  end
+
+puts 'Done'
+puts 'Now creating airports...'
 
 url = "https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json"
 airport_serialized = open(url).read
 airports = JSON.parse(airport_serialized)
 
-puts 'Creating airports...'
-
 airports.each do |airport|
   if airport["name"] == ""
     next
   end
-  Airport.create!(name: airport["name"], acronym: airport["code"], lat: airport["lat"], lon: airport["lon"])
+  Airport.create!(name: airport["name"], acronym: airport["code"], lat: airport["lat"].to_f, lon: airport["lon"].to_f)
 end
 
 puts 'Done'
-puts "Creating 5 jets"
+puts 'Now creating jets trip 1...'
 
-jets.each_with_index do |jet, index|
-  Jet.create!(
-    name: jet,
-    description: description[index],
+25.times do
+  jet = Jet.create!(
+    name: Faker::Space.star,
+    description: Faker::Lorem.paragraphs(1),
     has_service: true,
     start_on: Faker::Date.between(40.days.ago, Date.yesterday),
     end_on: Faker::Date.forward(150),
     max_capacity: (1..8).to_a.sample,
-    price: prices[index],
-    user_id: 1,
-    airport_origin: Airport.all[1..20].sample,
-    airport_destination: Airport.all[21..50].sample
+    price: (1500..15000).to_a.sample,
+    user_id: (1..10).to_a.sample,
+    airport_origin: Airport.find(1667),
+    airport_destination: Airport.find(1901),
     )
-end
+  end
 
-puts "Finished"
+puts 'Done'
+puts 'Now creating jets trip 2...'
 
+25.times do
+  jet = Jet.create!(
+    name: Faker::Space.star,
+    description: Faker::Lorem.paragraphs(1),
+    has_service: true,
+    start_on: Faker::Date.between(40.days.ago, Date.yesterday),
+    end_on: Faker::Date.forward(150),
+    max_capacity: (1..8).to_a.sample,
+    price: (1500..15000).to_a.sample,
+    user_id: (1..10).to_a.sample,
+    airport_origin: Airport.find(1338),
+    airport_destination: Airport.find(2799),
+    )
+  end
+
+puts 'Done'
+puts 'All finished'
