@@ -1,9 +1,9 @@
-<h1>Edit your booking</h1>
+<h1 class='text-center'>Edit your booking</h1>
 
 
-<%= simple_form_for [@booking] do |f| %>
+<%= simple_form_for @booking, html: { class: "text-center container"} do |f| %>
 
-    <%= f.input :seats, as: :radio_buttons, collection: @jet.seat_range %>
+    <%= f.input :seats, as: :select, collection: @jet.seat_range %>
     <%= f.submit "Submit" %>
 
 <% end %>
