@@ -15,11 +15,11 @@ body{
 .ticket{
   width: 600px;
   height: 250px;
-  background: #FFB300;
+  background: $red;
   border-radius: 3px;
   box-shadow: 0 0 100px #aaa;
-  border-top: 1px solid #E89F3D;
-  border-bottom: 1px solid #E89F3D;
+  border-top: 1px solid $red;
+  border-bottom: 1px solid $red;
 }
 
 .left{
@@ -40,7 +40,7 @@ body{
   margin-top: 8px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #FFB300;
+  border-right: 5px solid $red;
 }
 
 .left li:nth-child(3),
@@ -98,14 +98,14 @@ body{
   margin-left: 2px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #FFB300;
+  border-right: 5px solid $red;
 }
 
 .left li:nth-child(14){
   margin-top: 7px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 5px solid #FFB300;
+  border-right: 5px solid $red;
 }
 
 .right{
@@ -121,7 +121,7 @@ body{
   margin-top: 8px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #FFB300;
+  border-left: 5px solid $red;
 }
 
 .right li:nth-child(3),
@@ -178,7 +178,7 @@ body{
   margin-top: 7px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-left: 5px solid #FFB300;
+  border-left: 5px solid $red;
 }
 
 .ticket:after{
@@ -188,11 +188,11 @@ body{
   top: 0px;
   width: 2px;
   height: 250px;
-  box-shadow: inset 0 0 0 #FFB300,
-    inset 0 -10px 0 #B56E0A,
-    inset 0 -20px 0 #FFB300,
-    inset 0 -30px 0 #B56E0A,
-    inset 0 -40px 0 #FFB300,
+  box-shadow: inset 0 0 0 $red,
+    inset 0 -10px 0 #822,
+    inset 0 -20px 0 $red,
+    inset 0 -30px 0 #822,
+    inset 0 -40px 0 $red,
     inset 0 -50px 0 #999999,
     inset 0 -60px 0 #E5E5E5,
     inset 0 -70px 0 #999999,
@@ -210,10 +210,10 @@ body{
     inset 0 -190px 0 #B0B0B0,
     inset 0 -200px 0 #EEEEEE,
     inset 0 -210px 0 #B0B0B0,
-    inset 0 -220px 0 #FFB300,
-    inset 0 -230px 0 #B56E0A,
-    inset 0 -240px 0 #FFB300,
-    inset 0 -250px 0 #B56E0A;
+    inset 0 -220px 0 $red,
+    inset 0 -230px 0 #822,
+    inset 0 -240px 0 $red,
+    inset 0 -250px 0 #822;
 }
 
 .ticket:before{
@@ -224,11 +224,11 @@ body{
   top: 0px;
   width: 1px;
   height: 250px;
-  box-shadow: inset 0 0 0 #FFB300,
-    inset 0 -10px 0 #F4D483,
-    inset 0 -20px 0 #FFB300,
-    inset 0 -30px 0 #F4D483,
-    inset 0 -40px 0 #FFB300,
+  box-shadow: inset 0 0 0 $red,
+    inset 0 -10px 0 $red,
+    inset 0 -20px 0 $red,
+    inset 0 -30px 0 $red,
+    inset 0 -40px 0 $red,
     inset 0 -50px 0 #FFFFFF,
     inset 0 -60px 0 #E5E5E5,
     inset 0 -70px 0 #FFFFFF,
@@ -246,10 +246,10 @@ body{
     inset 0 -190px 0 #FFFFFF,
     inset 0 -200px 0 #EEEEEE,
     inset 0 -210px 0 #FFFFFF,
-    inset 0 -220px 0 #FFB300,
-    inset 0 -230px 0 #F4D483,
-    inset 0 -240px 0 #FFB300,
-    inset 0 -250px 0 #F4D483;
+    inset 0 -220px 0 $red,
+    inset 0 -230px 0 $red,
+    inset 0 -240px 0 $red,
+    inset 0 -250px 0 $red;
 }
 
 .content{
@@ -263,11 +263,11 @@ body{
 .airline{
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 29px;
   font-family: $ticket-font;
   font-size: 20px;
   font-weight: bold;
-  color: rgba(0,0,102,1);
+  color: black;
 }
 
 .boarding{
@@ -404,61 +404,61 @@ body{
   height: 30px;
   width: 90px;
   background: #222;
-  box-shadow: inset 0 1px 0 #FFB300, inset -2px 0 0 #FFB300,
+  box-shadow: inset 0 1px 0 $red, inset -2px 0 0 $red,
     inset -4px 0 0 #222,
-    inset -5px 0 0 #FFB300,
+    inset -5px 0 0 $red,
     inset -6px 0 0 #222,
-    inset -9px 0 0 #FFB300,
+    inset -9px 0 0 $red,
     inset -12px 0 0 #222,
-    inset -13px 0 0 #FFB300,
+    inset -13px 0 0 $red,
     inset -14px 0 0 #222,
-    inset -15px 0 0 #FFB300,
+    inset -15px 0 0 $red,
     inset -16px 0 0 #222,
-    inset -17px 0 0 #FFB300,
+    inset -17px 0 0 $red,
     inset -19px 0 0 #222,
-    inset -20px 0 0 #FFB300,
+    inset -20px 0 0 $red,
     inset -23px 0 0 #222,
-    inset -25px 0 0 #FFB300,
+    inset -25px 0 0 $red,
     inset -26px 0 0 #222,
-    inset -26px 0 0 #FFB300,
+    inset -26px 0 0 $red,
     inset -27px 0 0 #222,
-    inset -30px 0 0 #FFB300,
+    inset -30px 0 0 $red,
     inset -31px 0 0 #222,
-    inset -33px 0 0 #FFB300,
+    inset -33px 0 0 $red,
     inset -35px 0 0 #222,
-    inset -37px 0 0 #FFB300,
+    inset -37px 0 0 $red,
     inset -40px 0 0 #222,
-    inset -43px 0 0 #FFB300,
+    inset -43px 0 0 $red,
     inset -44px 0 0 #222,
-    inset -45px 0 0 #FFB300,
+    inset -45px 0 0 $red,
     inset -46px 0 0 #222,
-    inset -48px 0 0 #FFB300,
+    inset -48px 0 0 $red,
     inset -49px 0 0 #222,
-    inset -50px 0 0 #FFB300,
+    inset -50px 0 0 $red,
     inset -52px 0 0 #222,
-    inset -54px 0 0 #FFB300,
+    inset -54px 0 0 $red,
     inset -55px 0 0 #222,
-    inset -57px 0 0 #FFB300,
+    inset -57px 0 0 $red,
     inset -59px 0 0 #222,
-    inset -61px 0 0 #FFB300,
+    inset -61px 0 0 $red,
     inset -64px 0 0 #222,
-    inset -66px 0 0 #FFB300,
+    inset -66px 0 0 $red,
     inset -67px 0 0 #222,
-    inset -68px 0 0 #FFB300,
+    inset -68px 0 0 $red,
     inset -69px 0 0 #222,
-    inset -71px 0 0 #FFB300,
+    inset -71px 0 0 $red,
     inset -72px 0 0 #222,
-    inset -73px 0 0 #FFB300,
+    inset -73px 0 0 $red,
     inset -75px 0 0 #222,
-    inset -77px 0 0 #FFB300,
+    inset -77px 0 0 $red,
     inset -80px 0 0 #222,
-    inset -82px 0 0 #FFB300,
+    inset -82px 0 0 $red,
     inset -83px 0 0 #222,
-    inset -84px 0 0 #FFB300,
+    inset -84px 0 0 $red,
     inset -86px 0 0 #222,
-    inset -88px 0 0 #FFB300,
+    inset -88px 0 0 $red,
     inset -89px 0 0 #222,
-    inset -90px 0 0 #FFB300;
+    inset -90px 0 0 $red;
 }
 
 .slip{
