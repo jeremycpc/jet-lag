@@ -1,0 +1,34 @@
+.booking-card {
+  width: 100%;
+  height: 330px;
+  background-color: none;
+  display: flex;
+  input[type="submit"]{
+    margin-left: 2px
+  }
+    .form-control{
+    width: 40px;
+  }
+}
+
+.booking-details{
+
+}
+
+.booking-description {
+  display: flex;
+  align-items: center;
+}
+
+.booking-links {
+}
+.booking-header {
+  font-weight: lighter;
+}
+.no-booking {
+  font-size: 30px;
+}
+
+.booking-footer {
+  display:flex;
+}
