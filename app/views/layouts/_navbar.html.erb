@@ -1,0 +1,35 @@
+<div class="navbar-container">
+
+<!-- Logo -->
+<%= link_to root_path do %>
+  <i class="far fa-paper-plane icon"></i>
+<% end %>
+
+<!-- Right Navigation -->
+  <div class="navbar-wagon-right">
+    <%= link_to "Create your ad", new_jet_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "Show your bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+ <!-- Profile picture with dropdown list -->
+
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <% if current_user %>
+       <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {:toggle => "dropdown"}%>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Update Details", edit_user_registration_path %></li>
+        </ul>
+        <% else %>
+        <div class="btn btn-danger btn-sm" data-toggle= "dropdown">Menu</div>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Log In", user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        </ul>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>

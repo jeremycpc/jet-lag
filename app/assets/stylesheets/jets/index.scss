@@ -1,10 +1,11 @@
 .main-title {
   font-size: 60px;
-  position: absolute;
-  top: 90px;
-  left: 600px;
   color: red;
   font-family: "Great Vibes", cursive;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container-header {
@@ -15,13 +16,16 @@
 
 .banner {
   background-size: cover;
-  height: 450px;
+  height: 500px;
   width: 100%;
   margin:0 auto;
   object-fit: cover;
   position: relative;
 }
 
+.banner-image {
+  filter: blur(2px);
+}
 .search-wrapper {
   display: flex;
   align-items: center;
@@ -30,12 +34,15 @@
 
 .search-bar {
   padding: 0 20px;
-  display: flex;
-  align-items: center;
   font-family: 'Open Sans', sans-serif;
   background-color: white;
+  height: 170px;
+  width: 900px;
   position: absolute;
-  height: 120px;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
 }
 
 input {
@@ -64,7 +71,32 @@ select {
   color: #2A3250;
 }
 
-#padding-h4 {
+.padding-h4 {
   padding-top: 60px;
 }
 
+.explanation-title {
+  padding-top: 60px;
+  text-align: center;
+
+}
+
+.row-h3 {
+    font-size: 20px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.bar-inputs {
+  position: inline-flex;
+}
+
+.body-container {
+  margin-top: 100px;
+  margin-left: 80px;
+  margin-bottom: 100px;
+}
+
+.multi-tab {
+  margin-left: 10%;
+}
