@@ -13,7 +13,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'layouts/navbar' unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(edit_user_registration_path) %>
+    <%= render 'layouts/navbar' unless devise_controller? %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
