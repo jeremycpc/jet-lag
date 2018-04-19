@@ -9,8 +9,9 @@
   </div>
 
     <div class="card-description">
-      <h3><%= jet.name %></h3>
-      <p>$<%= jet.price %> one way</p>
+      <p><%= jet.airport_origin.name %></p>
+      <h3><%= jet.name.upcase %></h3>
+      <p>from <%= jet.price %> USD</p>
     </div>
     <%= link_to "", jet_path(jet), class: "card-link"%>
 </div>
