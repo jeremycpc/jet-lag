@@ -1,102 +1,81 @@
-.main-title {
+.heading {
   font-size: 60px;
   color: red;
   font-family: "Great Vibes", cursive;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.container-header {
-  display: flex;
-  justify-content: center;
-  height: 450px;
+  height: 400px;
+  padding-top: 50px;
 }
 
 .banner {
   background-size: cover;
+  background-position: center;
   height: 500px;
   width: 100%;
-  margin:0 auto;
-  object-fit: cover;
-  position: relative;
 }
 
-.banner-image {
-  filter: blur(2px);
-}
-.search-wrapper {
+.search-bar-wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .search-bar {
-  padding: 0 20px;
   font-family: 'Open Sans', sans-serif;
   background-color: white;
-  height: 170px;
-  width: 900px;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 800px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
+  padding: 5px 0px;
+}
+
+.search-bar h3 {
+  font-size: 22px;
+  margin-top: 12px;
 }
 
 input {
   border-radius: 10px;
   border: none;
   font-family: 'Open Sans', sans-serif;
-  margin-left: 20px;
-  padding: 5px;
   background: transparent;
   border: 1px solid rgba(42,50,80,1);
   padding: 5px 20px 5px;
   color: #2A3250;
+  margin: 3px 0px;
 }
 
 select {
   width: 250px;
-  height: 40px;
   font-family: 'Open Sans', sans-serif;
   color: #2A3250;
+  margin: 3px 0px;
 }
 
-.banner-text {
-  font-family: "Open Sans", sans-serif;
-  text-align: center;
-  font-size: 25px;
-  color: #2A3250;
-}
-
-.padding-h4 {
-  padding-top: 60px;
-}
-
-.explanation-title {
-  padding-top: 60px;
-  text-align: center;
-
-}
-
-.row-h3 {
-    font-size: 20px;
-    padding-left: 10px;
-    padding-bottom: 10px;
-}
-
-.bar-inputs {
-  position: inline-flex;
-}
-
-.body-container {
+.explain {
   margin-top: 100px;
-  margin-left: 80px;
-  margin-bottom: 100px;
 }
 
-.multi-tab {
-  margin-left: 10%;
+.explain a {
+  text-decoration-line: underline;
 }
+
+h3 {
+  font-size: 24px;
+}
+
+.jets-near-you {
+  padding: 10px 0px;
+}
+
+.form-control {
+  display: inline;
+  width: 40%;
+}
+
+
+// .multi-tab {
+//   margin: 10px;
+// }
+
+// .tab {
+//   margin: 50px 0px;
+// }
