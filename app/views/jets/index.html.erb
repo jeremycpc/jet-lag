@@ -3,48 +3,71 @@
 </head>
 
 <body>
-
-
   <%= render "/navbar" %>
-
   <div class="container-header">
-
     <div class="banner">
-      <%=image_tag "https://images.unsplash.com/uploads/14114640960629b5c3fa0/116dc05a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbfd4b7f8ece57720da85b50565a2709&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
-<div class="main-title">Jet Lag</div>
-    <div class="search-wrapper">
-      <div class="search-bar">
+      <div class="banner-image">
+        <%=image_tag "https://images.unsplash.com/uploads/14114640960629b5c3fa0/116dc05a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbfd4b7f8ece57720da85b50565a2709&auto=format&fit=crop&w=2850&q=80", class: 'banner' %>
+      </div>
+      <div class="main-title">Jet Lag</div>
+      <div class="container">
         <div class="row">
-          <div class="col-xs-12">
-            <h4>Search jets</h4>
+          <div class="col-lg-12 col-md-8">
+            <div class="search-wrapper">
+              <div class="search-bar">
+                <h3 class="row-h3">Search for your first trip now:</h3>
+                <br>
+                <span class="bar-inputs">
+                  <%= form_tag(search_airports_path, method: :get) do %>
+                  <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
+                  <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
+                  <%= submit_tag 'Search' %>
+                </span>
+                <% end %>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-12">
-          <%= form_tag(search_airports_path, method: :get) do %>
-          <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
-          <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
-          <%= submit_tag 'Search' %>
-          <% end %>
         </div>
       </div>
     </div>
   </div>
-
-    </div>
-
-  </div>
-
-  <br>
-
-  <div class="container">
-    <h4 id="padding-h4">Jets around the world</h4>
-    <div class="row">
-      <% @jets.each do |jet| %>
-        <div class="col-xs-3">
-          <%= render "card", { jet: jet }%>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-8">
+      <div class="multi-tab">
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'London')">Sign up</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">How does it work?</button>
+          <button class="tablinks" onclick="openCity(event, 'Tokyo')">Book your first trip</button>
         </div>
-      <% end %>
+        <div id="London" class="tabcontent">
+          <p>Just sign up</p>
+        </div>
+
+        <div id="Paris" class="tabcontent">
+          <p>It works</p>
+        </div>
+
+        <div id="Tokyo" class="tabcontent">
+          <p>With Lebron</p>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+<br>
+<div class="body-container">
+  <h4 class="padding-h4">All our Jets around the world:</h4>
+  <div class="row">
+    <% @jets.each do |jet| %>
+    <div class="col-xs-3">
+      <%= render "card", { jet: jet }%>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>
 </body>
 
 
