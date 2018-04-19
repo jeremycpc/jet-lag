@@ -1,25 +1,56 @@
-<div class="registration-container">
+<div class="container-fluid">
 
+  <div id="side-image" class="image-fader" style="background-image: url('http://howardyuphoto.com/wp-content/uploads/2016/12/Private-Jet-gril-21.jpg')"></div>
 
-    <h2>Sign up</h2>
+  <div class="login-container">
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+    <div class="intro-container">
+      <p id="title">Jet Lag</p>
+      <p id="welcome">Welcome to private jets<br>without borders.</p>
+      <p id="tosignup">Already a member? <%= link_to "Sign in", :new_user_session, class: "linksu" %></p>
+    </div>
 
-      <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
-        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-        <%= f.input :password_confirmation, required: true %>
-        <%= f.input :first_name, required: true %>
-        <%= f.input :last_name, required: true %>
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <div class="form">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> <%= f.error_notification %>
+
+            <%= f.input :email, required: true, autofocus: true, autofocus: true, label: false, placeholder: "Enter your email" %>
+            <%= f.input :password, required: true, label: false, placeholder: "Choose a password", hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+            <%= f.input :password_confirmation, required: true, label: false, placeholder: "Confirm your password" %>
+            <%= f.input :first_name, required: true, label: false, placeholder: "First name" %>
+            <%= f.input :last_name, required: true, label: false, placeholder: "Last name" %>
+
+          <div class="form-photo">
+            <%= f.input :photo, label: "Optional: upload a profile picture" %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up" %>
+          </div>
+
+          <% end %>
+
+          <br>
+          <p id="tosignup">Coming Soon!</p>
+
+          <div id="fb-btn">
+              <i class="fa fa-facebook-square"></i><p>Sign up with Facebook<p>
+          </div>
+
+          <div id="gg-btn">
+              <i class="fa fa-google"></i><p>Sign up with Google<p>
+          </div>
+
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up" %>
-      </div>
+  <div id="closing-cross">
+    <%= link_to :jets do %>
+      <i class="fa fa-times"></i>
     <% end %>
-    <br>
-    <%= link_to "Back to Home", :back, class: "home-btn" %>
+  </div>
 </div>
