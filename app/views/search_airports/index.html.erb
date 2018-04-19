@@ -1,21 +1,27 @@
 <% if @jets != []  %>
 
-<div class="container">
-  <h3>Explore jets</h3>
-  <div class="row">
-    <% @jets.each do |jet| %>
-      <div class="col-xs-3">
-        <%= render "card", { jet: jet }%>
-      </div>
-    <% end %>
-  </div>
+<div class="pretend-navbar">
 </div>
+
+
+<div class="container-layout">
+  <div class="cards">
+<h3>Explore jets</h3>
+    <div class="row">
+      <% @jets.each do |jet| %>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <%= render "card_search_airports", { jet: jet }%>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
     <div
       id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
     ></div>
+</div>
 
 <% else %>
   <!-- Icons purchased via Iconfinder under Basic License. Don't steal. Purchase your own if you want to use -->
