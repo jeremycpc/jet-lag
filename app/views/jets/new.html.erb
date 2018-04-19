@@ -1,19 +1,61 @@
-<h1 class="text-center">New Jet</h1>
-<div class="container">
-  <%= simple_form_for @jet   do |f| %>
-  <%= f.error_notification %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :has_service, as: :select %>
-  <%= f.association :airport_origin %>
-  <%= f.association :airport_destination %>
-  <%= f.input :max_capacity, as: :select, collection: 1..10 %>
-  <%= f.input :start_on, as: :date  %>
-  <%= f.input :end_on, as: :date %>
-  <%= f.input :price %>
-  <%= f.input :photo %>
-  <%= f.input :photo_cache, as: :hidden %>
-  <%= f.submit "Add a Jet", class: "btn btn-primary" %>
-<% end %>
- <%= link_to "Back home", jets_path %>
+<div class="container-fluid">
+  <div class="newjet-container">
+
+    <div class="top-container">
+      <p class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">Post an Ad</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+        <div class="form-jet">
+          <%= simple_form_for @jet do |f| %>
+          <%= f.error_notification %>
+
+          <p id="title-steps">1/4 Ad details</p>
+          <div class="step-one">
+            <%= f.input :name, required: true, autofocus: true, label: "Your jet name" %>
+            <%= f.input :description, required: true, label: "Describe your jet", hint: "4000 characters.min" %>
+            <div class="select-jet-one">
+              <%= f.input :max_capacity, as: :select, collection: 1..10, required: true, label: "Maximum seats" %>
+              <%= f.input :has_service, as: :select, required: true, label: "Is service included?" %>
+            </div>
+            <div class="select-jet-two">
+              <%= f.association :airport_origin, required: true, label: "Where is your jet flying from?" %>
+              <%= f.association :airport_destination, required: true, label: "To which destination?" %>
+            </div>
+          </div>
+
+          <p id="title-steps">2/4 Available Dates</p>
+          <div class="step-two">
+            <%= f.input :start_on, as: :date, required: true, label: "Available from"  %>
+            <%= f.input :end_on, as: :date, required: true, label: "To"  %>
+          </div>
+
+          <p id="title-steps">3/4 Set Price ($USD)</p>
+          <div class="step-three">
+            <%= f.input :price, required: true, label: "Price" %>
+          </div>
+
+          <p id="title-steps">4/4 Add Photos</p>
+          <div class="step-four">
+            <%= f.input :photo, label: "Upload at least one photo", hint: "High resolution photo drive higher interest!" %>
+            <%= f.input :photo_cache, as: :hidden %>
+          </div>
+
+          <div class="form-actions-jet">
+            <%= f.button :submit, "Post ad" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="closing-cross-jet">
+    <%= link_to :jets do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </div>
 </div>
+
