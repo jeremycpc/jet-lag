@@ -30,7 +30,7 @@ end
 puts 'Done'
 puts 'Now creating jets trip 1...'
 
-25.times do
+5.times do
   jet = Jet.create!(
     name: Faker::Space.star,
     description: Faker::Lorem.paragraphs(1),
@@ -42,13 +42,14 @@ puts 'Now creating jets trip 1...'
     user_id: (1..10).to_a.sample,
     airport_origin: Airport.find(1667),
     airport_destination: Airport.find(1901),
+    photo: open("https://source.unsplash.com/1600x900/?jet")
     )
   end
 
 puts 'Done'
 puts 'Now creating jets trip 2...'
 
-25.times do
+5.times do
   jet = Jet.create!(
     name: Faker::Space.star,
     description: Faker::Lorem.paragraphs(1),
@@ -60,6 +61,7 @@ puts 'Now creating jets trip 2...'
     user_id: (1..10).to_a.sample,
     airport_origin: Airport.find(1338),
     airport_destination: Airport.find(2799),
+    photo: open("https://source.unsplash.com/1600x900/?jet")
     )
   end
 
