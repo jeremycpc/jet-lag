@@ -10,12 +10,12 @@
       <%= form_tag(search_airports_path, method: :get) do %>
       <div class="row">
         <div class="col-xs-12">
-        <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name"), class: "form-control" %>
+        <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "code_name"), class: "form-control" %>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-        <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name"), class: "form-control" %>
+        <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "code_name"), class: "form-control" %>
         </div>
       </div>
       <div class="row">

@@ -21,8 +21,8 @@
               <%= f.input :has_service, as: :select, required: true, label: "Is service included?" %>
             </div>
             <div class="select-jet">
-              <%= f.association :airport_origin, required: true, label: "Where is your jet flying from?" %>
-              <%= f.association :airport_destination, required: true, label: "To which destination?" %>
+              <%= f.association :airport_origin, collection: @airports.map { |a| [a.code_name, a.id] }, required: true, label: "Where is your jet flying from?" %>
+              <%= f.association :airport_destination, collection: @airports.map { |a| [a.code_name, a.id] }, required: true, label: "To which destination?" %>
             </div>
           </div>
 
