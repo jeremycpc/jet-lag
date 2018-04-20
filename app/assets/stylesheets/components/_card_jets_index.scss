@@ -11,11 +11,13 @@
   height: 175px;
   border-radius: 2px;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-description {
-  padding-left: 20px;
-  padding-bottom: 15px;
+  padding: 0px 5px 15px 5px;
   h3 {
     font-size: 20px;
     font-weight: bold;
