@@ -15,6 +15,12 @@
   height: 50px;
 }
 
+.new-logo {
+  display: flex;
+  align-items: center;
+  width: 180px;
+  justify-content: space-between;
+}
 /* User Avatar */
 .navbar-wagon-item .avatar {
   height: 35px;
