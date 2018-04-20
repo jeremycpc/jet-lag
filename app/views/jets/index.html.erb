@@ -1,12 +1,11 @@
 
 <div class="container-header">
   <div class="banner">
-      <img src="/assets/banner2.jpg" alt="banner2" style="z-index: 98">
-      <img src="/assets/beach1.jpg" alt="beach1" style="z-index: 97">
-      <img src="/assets/image2.jpg" alt="image2" style="z-index: 95">
-      <img src="/assets/moutain1.jpg" alt="moutain1" style="z-index: 93">
-      <img src="/assets/moutain2.jpg" alt="moutain2" style="z-index: 92">
-      <img src="/assets/norway1.jpg" alt="norway1" style="z-index: 91">
+    <% i = 98 %>
+    <% %w(banner2 beach1 image2 moutain1 moutain2 norway1).each do |img| %>
+      <%= image_tag "#{img}.jpg", style: "z-index: #{i}" %>
+      <% i -= 1 %>
+    <% end %>
   </div>
   <div class="search-wrapper">
     <div class="search-bar">
