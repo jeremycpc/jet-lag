@@ -4,12 +4,13 @@ class JetsController < ApplicationController
 
   def index
     @jets = policy_scope(Jet)
-    @airports = Airport.all.order(:name)
+    @airports = Airport.all
     @jets = @jets.sample(4)
   end
 
   def new
     @jet = Jet.new
+    @airports = Airport.all
     authorize @jet
   end
 
