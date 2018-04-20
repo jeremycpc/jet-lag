@@ -13,8 +13,8 @@
       <h3 class="row-h3">Search for your first trip now:</h3>
       <br>
       <%= form_tag(search_airports_path, method: :get, class: "index-form") do  %>
-      <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
-      <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
+      <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "code_name") %>
+      <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "code_name") %>
       <%= submit_tag 'Search' %>
       <% end %>
     </div>
