@@ -32,7 +32,9 @@
         <% end %>
         <br>
         <!-- CHANGE THIS LINE TO TRIGGER ERROR MESSAGE, SEE DIV AT BOTTOM -->
-        <%= fancy_popup_link("Cancel your trip?") %>
+        <% if policy(@jet).destroy? %>
+          <%= fancy_popup_link("Delete your jet?") %>
+        <% end %>
       </div>
     </div>
   </div>
