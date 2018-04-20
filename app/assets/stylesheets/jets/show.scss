@@ -14,12 +14,14 @@ body {
 }
 
 .jet-card {
-  margin: 50px auto;
+  margin: 30px auto;
   border-radius: 10px;
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   height: 400px;
   background-color: white;
   display: flex;
+  flex-wrap: wrap;
   input[type="submit"]{
     margin-left: 2px
   }

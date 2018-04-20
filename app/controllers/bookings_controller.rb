@@ -24,9 +24,11 @@ class BookingsController < ApplicationController
     @jet = Jet.find(params[:jet_id])
     @booking.jet = @jet
     @booking.user_id = current_user[:id]
-    @booking.booking_price = @jet.calculate_price * @booking.seats
+    if @booking.seats
+      @booking.booking_price = @jet.calculate_price * @booking.seats
+    end
     authorize @booking
-    if @booking.save!
+    if @booking.save
       redirect_to bookings_path
     else
       render 'jets/show'

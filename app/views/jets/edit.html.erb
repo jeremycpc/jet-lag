@@ -6,6 +6,7 @@
           <%= f.input :name %>
           <%= f.input :description, class: "form-control-width" %>
           <%= f.input :has_service, as: :select %>
+          <%= f.input :max_capacity, collection: 1..10 %>
           <%= f.association :airport_origin %>
           <%= f.association :airport_destination %>
           <%= f.input :price %>
