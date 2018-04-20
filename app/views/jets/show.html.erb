@@ -31,10 +31,8 @@
         <%= link_to "Edit this trip", edit_jet_path(@jet) %>
         <% end %>
         <br>
-        <% if policy(@jet).destroy? %>
-        <%= link_to "Delete this trip", jet_path(@jet), method: :delete,
-        data: { confirm: "Are you sure?" } %>
-        <% end %>
+        <!-- CHANGE THIS LINE TO TRIGGER ERROR MESSAGE, SEE DIV AT BOTTOM -->
+        <%= fancy_popup_link("Cancel your trip?") %>
       </div>
     </div>
   </div>
@@ -44,8 +42,10 @@
 </div>
 </div>
 
-</body>
+<!-- THIS DIV BELOW IS THE CONFIRMATION POP MESSAGE, CHANGE TEXT DEPENDING ON PAGE -->
 
-
+<%= fancy_popup("Are you sure you want to delete this trip?") do %>
+  <%= link_to "Yes", jet_path(@jet), method: :delete if policy(@jet).destroy? %>
+<% end %>
 
 

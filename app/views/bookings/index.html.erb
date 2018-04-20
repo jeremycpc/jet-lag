@@ -78,10 +78,10 @@
           <%= link_to "Inviting more people?", edit_booking_path(booking) %>
           <% end %>
           <br>
-          <% if policy(booking).destroy? %>
-          <%= link_to "Cancel trip", booking_path(booking), method: :delete,
-          data: { confirm: "Are you sure?" } %>
-          <% end %>
+
+          <!-- CHANGE THIS LINE TO TRIGGER ERROR MESSAGE, SEE DIV AT BOTTOM -->
+          <%= fancy_popup_link("Cancel your booking?", target: "fancy-#{booking.id}") %>
+
         </div>
         <div class="col-xs-12 col-sm-4 col-sm-offset-1">
           <div class="booking-details">
@@ -109,6 +109,15 @@
     <%= link_to "Back home", jets_path %>
 </div>
 
+<!-- THIS DIV BELOW IS THE CONFIRMATION POP MESSAGE, CHANGE TEXT DEPENDING ON PAGE -->
+
+<% @bookings.each do |booking| %>
+  <%= fancy_popup("Are you sure you want to delete this booking?", id: "fancy-#{booking.id}") do %>
+    <% if policy(booking).destroy? %>
+    <%= link_to "Yes", booking_path(booking), method: :delete %>
+    <% end %>
+  <% end %>
+<% end %>
 
 
 

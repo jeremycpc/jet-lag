@@ -15,11 +15,12 @@
           <div class="step-one">
             <%= f.input :name, required: true, autofocus: true, label: "Your jet name" %>
             <%= f.input :description, required: true, label: "Describe your jet", hint: "4000 characters.min" %>
-            <div class="select-jet-one">
+
+            <div class="select-jet">
               <%= f.input :max_capacity, as: :select, collection: 1..10, required: true, label: "Maximum seats" %>
               <%= f.input :has_service, as: :select, required: true, label: "Is service included?" %>
             </div>
-            <div class="select-jet-two">
+            <div class="select-jet">
               <%= f.association :airport_origin, required: true, label: "Where is your jet flying from?" %>
               <%= f.association :airport_destination, required: true, label: "To which destination?" %>
             </div>
@@ -27,8 +28,14 @@
 
           <p id="title-steps">2/4 Available Dates</p>
           <div class="step-two">
-            <%= f.input :start_on, as: :date, required: true, label: "Available from"  %>
-            <%= f.input :end_on, as: :date, required: true, label: "To"  %>
+            <div class="row">
+              <div class='col-md-5'>
+                <%= f.input :start_on, as: :string, required: true, label: "Available from", input_html: { class: 'datepicker', data: { :'date-start-date' => '+1d'} }  %>
+              </div>
+              <div class='col-md-5'>
+                <%= f.input :end_on, as: :string, required: true, label: "To", input_html: { class: 'datepicker', data: { :'date-start-date' => '+2d'} }  %>
+              </div>
+            </div>
           </div>
 
           <p id="title-steps">3/4 Set Price ($USD)</p>
