@@ -3,32 +3,32 @@
   margin: 20px 0px;
   height: auto;
   background-color: white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
+  // box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
 }
 
 .card {
   margin-bottom: 20px;
   height: 175px;
-  border-radius: 2px;
+  border-radius: 3px;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-description {
-  padding-left: 20px;
-  padding-bottom: 15px;
+  padding: 0px 5px 15px 5px;
   h3 {
     font-size: 20px;
     font-weight: bold;
-}
-  h4 {
-    font-size: 16px;
-}
+    margin: 10px 0px;
+  }
   p {
     font-size: 14px;
     font-weight: lighter;
     color: black;
     margin: 0px;
-}
+  }
 }
 
 .card-link {

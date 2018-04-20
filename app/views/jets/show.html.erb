@@ -4,48 +4,61 @@
       <h1 class="show-title"><%= @jet.name %></h1>
     </div>
   </div>
-   <br>
-  <p class="show-text">Book your first trip with Jet Lag today:</p>
-  <div class="wrapper">
-  <div class="jet-card">
-    <div>
-      <%=image_tag "https://source.unsplash.com/600x700//?{landscape}", class:"inside-image"%>
-    </div>
-    <div class="description-container">
-      Description of this jet: <b><%= @jet.description %></b>
-      <br>
-      Service on board: <b><%= @jet.has_service ? "Yes" : "No" %></b>
-      <br>
-      Belongs to: <b><%= @jet_owner.first_name %></b>
-      <br>
-      Departure airport: <b><%= @jet.airport_origin.name %> (<%= @jet.airport_origin.acronym %>)</b>
-      <br>
-      Destination airport: <b><%= @jet.airport_destination.name %> (<%= @jet.airport_destination.acronym %>)</b>
-      <br>
-      Book a trip:<b> $ <%= (@jet.calculate_price).floor %></b>
-      <div class="seats"></div>
-      <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking, class:"seats-form" %>
-
-      <div class="edit-delete">
+  <br>
+  <div class="container">
+    <p class="show-text">Book your first trip with Jet Lag today:</p>
+    <div class="row">
+        <div class="jet-card">
+          <div>
+            <%=image_tag "https://source.unsplash.com/600x700//?{landscape}", class:"inside-image"%>
+          </div>
+          <div class="description-container">
+            Description of this jet: <b><%= @jet.description %></b>
+            <br>
+            Service on board: <b><%= @jet.has_service ? "Yes" : "No" %></b>
+            <br>
+            Belongs to: <b><%= @jet.user.first_name %></b>
+            <br>
+            Departure airport: <b><%= @jet.airport_origin.name %> (<%= @jet.airport_origin.acronym %>)</b>
+            <br>
+            Destination airport: <b><%= @jet.airport_destination.name %> (<%= @jet.airport_destination.acronym %>)</b>
+            <br>
+            Base price: $<span id="base-price"><b><%= @jet.price %><b></span>
+              <div class="booking-action">
+                <div class="booking-details">
+                  Distance between <%= @jet.airport_origin.acronym %> and <%= @jet.airport_destination.acronym %> ($ 1.2 / km) <br>
+                  <%= @jet.calculate_distance([@jet.airport_origin.lat.to_f,@jet.airport_origin.lon.to_f],
+                  [@jet.airport_destination.lat.to_f,@jet.airport_destination.lon.to_f]) %>km
+                  <br>
+                  Duration : <%= (@jet.end_on - @jet.start_on).floor * 1000 %> <%= "day".pluralize((@jet.end_on - @jet.start_on).floor * 1000) %> ( $1,000 / day ) <br>
+                  <br>
+                  <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking, class:"seats-form" %>
+                </div>
+                <div class="total">
+                  Total price: $ <span id="total-price"><%= (@jet.calculate_price).floor %></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="row">
         <% if policy(@jet).update? %>
         <%= link_to "Edit this trip", edit_jet_path(@jet) %>
         <% end %>
         <br>
+        <!-- CHANGE THIS LINE TO TRIGGER ERROR MESSAGE, SEE DIV AT BOTTOM -->
         <% if policy(@jet).destroy? %>
-        <%= link_to "Delete this trip", jet_path(@jet), method: :delete,
-        data: { confirm: "Are you sure?" } %>
+          <%= fancy_popup_link("Delete your jet?") %>
         <% end %>
       </div>
     </div>
   </div>
-</div>
-<div class="home-btn">
-  <%= link_to "Back home", jets_path %>
-</div>
-</div>
 
-</body>
+<%= javascript_pack_tag 'total_price' %>
 
-
+<!-- THIS DIV BELOW IS THE CONFIRMATION POP MESSAGE, CHANGE TEXT DEPENDING ON PAGE -->
+<%= fancy_popup("Are you sure you want to delete this trip?") do %>
+  <%= link_to "Yes", jet_path(@jet), method: :delete if policy(@jet).destroy? %>
+<% end %>
 
 

@@ -1,6 +1,6 @@
 <%= simple_form_for [jet, booking] do |f| %>
 
-    <%= f.input :seats, as: :select, collection: jet.seat_range %>
+    <%= f.input :seats, as: :select, collection: jet.seat_range, include_blank: "Please select number of seats", input_html: { style: "width: 100%" } %>
     <%= f.submit "Submit" %>
 
 <% end %>

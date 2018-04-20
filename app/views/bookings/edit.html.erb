@@ -1,12 +1,27 @@
-<h1 class='text-center'>Edit your booking</h1>
 
+<div class="container-fluid">
+  <div class="edit-container">
+    <div class="intro-container">
+      <p id="edit-title">Edit booking</p>
+    </div>
 
-<%= simple_form_for @booking, html: { class: "text-center container"} do |f| %>
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+        <div class="form-edit-booking">
+          <%= simple_form_for @booking do |f| %>
+              Seats booked:
+            <%= f.input :seats, as: :select, collection: @jet.seat_range, autofocus: true, label: false, input_html: { style: "width: 100%" } %>
 
-    <%= f.input :seats, as: :select, collection: @jet.seat_range %>
-    <%= f.submit "Submit" %>
+          <div class="form-actions">
+            <%= f.button :submit, "Update" %>
+          </div>
 
-<% end %>
+          <% end %>
 
-<%= link_to 'Back', :back %>
-<%= link_to 'Home', :jets %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="bottom"></div>
+</div>

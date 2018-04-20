@@ -1,6 +1,4 @@
 <div class="container-fluid">
-
-
   <div class="edit-container">
 
     <div class="intro-container">
@@ -24,14 +22,14 @@
             <%= f.input :first_name, label: false, placeholder: "First name" %>
             <%= f.input :last_name, label: false, placeholder: "Last name"  %>
 
-          <div class="form-actions">
+          <div class="form-actions-update">
             <%= f.button :submit, "Update" %>
           </div>
 
           <% end %>
 
-          <p class="unhappy"> Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
+          <!-- CHANGE THIS LINE TO TRIGGER ERROR MESSAGE, SEE DIV AT BOTTOM -->
+          <%= fancy_popup_link("Unhappy, cancel your account?") %>
         </div>
       </div>
     </div>
@@ -45,3 +43,9 @@
 
   <div id="bottom"></div>
 </div>
+
+<!-- THIS DIV BELOW IS THE CONFIRMATION POP MESSAGE, CHANGE TEXT DEPENDING ON PAGE -->
+
+<%= fancy_popup("Are you sure you want to cancel your account?") do %>
+  <%= link_to "Yes", registration_path(resource_name), method: :delete %>
+<% end %>
