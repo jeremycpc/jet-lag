@@ -101,13 +101,6 @@ body {
   form {
     width: 100%;
   }
-}
-
-.select-jet-one {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: row;
 
   select {
     margin: 0px;
@@ -115,15 +108,16 @@ body {
   }
 }
 
-.select-jet-two {
+.select-jet {
   display: flex;
   align-items: center;
   justify-content: space-around;
   flex-direction: row;
 
-  select {
-    margin: 0px;
-    width: 100%;
+  > div {
+    flex: 1;
+    margin: 0px 50px;
+    margin-bottom: 15px;
   }
 }
 
@@ -135,6 +129,10 @@ body {
   margin-bottom: 35px;
   border: solid 1px;
   border-color: rgba(75, 75, 75, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
 
   input {
     margin: 0px;

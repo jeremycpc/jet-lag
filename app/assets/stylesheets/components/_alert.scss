@@ -15,3 +15,100 @@
 .alert-warning {
   background: $red;
 }
+
+.cd-popup {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(150, 150, 150, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  z-index: 9999;
+}
+
+.cd-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: 4em auto;
+  background: #FFF;
+  border-radius: .25em .25em .0em .0em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-40px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+  font-size: 12px;
+  font-family: inherit;
+}
+
+.cd-popup-container p {
+  padding: 3em 1em;
+  margin: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.cd-popup-container ul.cd-buttons {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cd-popup-container .cd-buttons li {
+  flex: 1;
+  list-style: none;
+  font-size: 18px;
+}
+
+.cd-popup-container .cd-buttons li:first-child a {
+  background: $red;
+}
+
+.cd-popup-container .cd-buttons li:last-child a {
+  background: #b6bece;
+}
+
+.cd-popup-container .cd-buttons a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #FFF;
+  transition: background-color 0.2s;
+}
+
+a {
+  color: #35a785;
+  text-decoration: none;
+}
+
+.img-replace {
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.cd-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.cd-popup-container {
+  transform: translateY(-40px);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.is-visible .cd-popup-container {
+  transform: translateY(0);
+}

@@ -1,0 +1,11 @@
+<div class="cd-popup <%= options[:class] %>" role="alert" id="<%= options[:id] %>">
+   <div class="cd-popup-container">
+      <p><%= title %></p>
+      <ul class="cd-buttons">
+         <li>
+          <%= yield %>
+         </li>
+         <li><a href="#0" class="fancy-close">No</a></li>
+      </ul>
+   </div> <!-- cd-popup-container -->
+</div>
