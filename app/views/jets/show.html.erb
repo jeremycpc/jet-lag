@@ -13,7 +13,6 @@
             <%=image_tag "https://source.unsplash.com/600x700//?{landscape}", class:"inside-image"%>
           </div>
           <div class="description-container">
-            Description of this jet: <b><%= @jet.description %></b>
             <br>
             Service on board: <b><%= @jet.has_service ? "Yes" : "No" %></b>
             <br>
@@ -26,11 +25,6 @@
             Base price: $<span id="base-price"><b><%= @jet.price %><b></span>
               <div class="booking-action">
                 <div class="booking-details">
-                  Distance between <%= @jet.airport_origin.acronym %> and <%= @jet.airport_destination.acronym %> ($ 1.2 / km) <br>
-                  <%= @jet.calculate_distance([@jet.airport_origin.lat.to_f,@jet.airport_origin.lon.to_f],
-                  [@jet.airport_destination.lat.to_f,@jet.airport_destination.lon.to_f]) %>km
-                  <br>
-                  Duration : <%= (@jet.end_on - @jet.start_on).floor * 1000 %> <%= "day".pluralize((@jet.end_on - @jet.start_on).floor * 1000) %> ( $1,000 / day ) <br>
                   <br>
                   <%= render 'bookings/bookingform', :jet => @jet, :booking => @booking, class:"seats-form" %>
                 </div>
