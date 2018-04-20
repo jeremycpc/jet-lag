@@ -4,7 +4,7 @@ body {
 
 .show-title {
   font-size: 60px;
-  color: red;
+  color: $red;
   text-align: center;
   font-family: "Great Vibes", cursive;
   padding-bottom: 30px;
@@ -51,6 +51,7 @@ form-control {
 
 .description-container {
   padding: 20px;
+  max-width: 600px;
 }
 
 .seats {
