@@ -1,83 +1,66 @@
-<div class="banner" style="background-image: url('https://images.unsplash.com/uploads/14114640960629b5c3fa0/116dc05a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbfd4b7f8ece57720da85b50565a2709&auto=format&fit=crop&w=2850&q=80')";>
 
-  <div class="text-center heading">Jet Lag</div>
-
-<div class="search-bar-wrapper">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="search-bar text-center">
-      <h3>Search for your first trip now:</h3>
-      <%= form_tag(search_airports_path, method: :get) do %>
-      <div class="row">
-        <div class="col-xs-12">
-        <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "code_name"), class: "form-control" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-        <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "code_name"), class: "form-control" %>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-        <%= submit_tag 'Search', class: "btn btn-danger" %>
-        </div>
-      </div>
+<div class="container-header">
+  <div class="banner">
+      <img src="/assets/banner2.jpg" alt="banner2" style="z-index: 98">
+      <img src="/assets/beach1.jpg" alt="beach1" style="z-index: 97">
+      <img src="/assets/image2.jpg" alt="image2" style="z-index: 95">
+      <img src="/assets/moutain1.jpg" alt="moutain1" style="z-index: 93">
+      <img src="/assets/moutain2.jpg" alt="moutain2" style="z-index: 92">
+      <img src="/assets/norway1.jpg" alt="norway1" style="z-index: 91">
+  </div>
+  <div class="search-wrapper">
+    <div class="search-bar">
+      <h3 class="row-h3">Search for your first trip now:</h3>
+      <br>
+      <%= form_tag(search_airports_path, method: :get, class: "index-form") do  %>
+      <%= select_tag :airport_origin, options_from_collection_for_select(@airports, "id", "name") %>
+      <%= select_tag :airport_destination, options_from_collection_for_select(@airports, "id", "name") %>
+      <%= submit_tag 'Search' %>
       <% end %>
-      </div>
     </div>
   </div>
 </div>
-
-</div>
-
-<br>
-
-<div class="container">
-
-  <div class="explain">
-    <h3>How does it work?</h3>
-    <p>Have you ever thought to yourself this line at the airport is taking way too long? Well think no more! With Jet Lag you can rent a jet to fly from point a to point b in the most luxurious and pain free manner.</p>
-    <p>Our platform also allows owners of jets to upload their plane when there's space available!</p>
-    <h3>Book your first trip</h3>
-    <p><%= link_to "Sign up now", new_user_registration_path %> and get ready to fly in style.</p>
-  </div>
-
-       <!--  <div class="multi-tab text-center">
+<div class="body-container">
+      <br>
+      <br>
+      <p class= "index-titles"> Introduction</p>
+      <br>
+      <div class="multi-tab">
         <div class="tab">
-          <button class="tablinks active" onclick="openCity(event, 'London')">Sign up</button>
-          <button class="tablinks" onclick="openCity(event, 'Paris')">How does it work?</button>
+          <button class="tablinks" onclick="openCity(event, 'Paris')">How does it work</button>
           <button class="tablinks" onclick="openCity(event, 'Tokyo')">Book your first trip</button>
         </div>
-        <div id="London" class="tabcontent">
-          <p>Just sign up</p>
-        </div>
-
         <div id="Paris" class="tabcontent">
-          <p>It works</p>
+          <p>Have you ever thought to yourself this line at the airport is taking way too long? Well think no more! With Jet Lag you can rent a jet to fly from point a to point b in the most luxurious and pain free manner.</p>
+          <p>Our platform also allows owners of jets to upload their plane when there's space available!</p>
         </div>
         <div id="Tokyo" class="tabcontent">
-          <p>With Lebron</p>
+          <p><%= link_to "Sign up now", new_user_registration_path %> and get ready to fly in style.</p>
         </div>
       </div>
-
-  </div> -->
-
-  <div class="jets-near-you">
-  <h3>Jets near you</h3>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-8">
+  <p class= "index-titles"> Jets near you</p>
+  <br>
   <div class="row">
     <% @jets.each do |jet| %>
     <div class="col-xs-12 col-sm-4 col-md-3">
       <%= render "card_jets_index", { jet: jet }%>
     </div>
     <% end %>
-  </div>
-
+      </div>
+      </div>
+    </div>
+<br>
   <div class="btn btn-danger">See more</div>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
-
-</div>
-
-
-
+<%= javascript_pack_tag 'banner' %>
 
