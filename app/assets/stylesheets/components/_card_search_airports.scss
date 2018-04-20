@@ -3,7 +3,7 @@
   margin: 0px 0px 20px 0px;
   height: auto;
   background-color: white;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
+  // box-shadow: 0 1px 4px rgba(0,0,0,0.16), 0 1px 4px rgba(0,0,0,0.23);
 }
 
 .card {
@@ -14,24 +14,18 @@
 }
 
 .card-description {
-  margin-left: 10px;
-  padding-bottom: 15px;
-}
-
-.card-description h3 {
-  font-size: 30px;
-  margin: 10px 0px;
-}
-
-.card-description h4 {
-  font-size: 16px;
-}
-
-.card-description p {
-  font-size: 14px;
-  font-weight: lighter;
-  color: black;
-  margin: 0px;
+  padding: 0px 5px 15px 5px;
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+    color: black;
+    margin: 0px;
+  }
 }
 
 .card-link {
